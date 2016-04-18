@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+ body {
+        overflow: hidden;
+    }
+    
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        
+        left: 10%;
+        right: 0;
+        border-bottom: solid 2px;
+    }
+     #console {
+        margin: 0;
+        position: absolute;
+        
+        left: 10%;
+        right: 0;
+        border-top: solid 2px;
+    }
+    #header{
+        margin: 0;
+        position: absolute;
+        left: 10%;
+        right: 0;
+
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+<div>
+<div id="list">
+ <button id="running">Running</button>
+ <br><br>
+   <button id="killing">Stop Processes</button>
+</div>
+<div id="editor"></div>
+<div id="header">
+    <button id="output_up" >Output &uarr;</button>
+    <button id="output_down" >Output &darr;</button>
+    </div>
+<div id="console"></div>
+</div>
+<script src="ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="controller.js" type="text/javascript" charset="utf-8"> </script>
+<script src="colors.js" type="text/javascript" charset="utf-8"> </script>
+</body>
+</html>
