@@ -1,11 +1,11 @@
-import os
-import signal
-currentPid=os.getpid()
-tasks=[]
-count=0;
-for line in os.popen('tasklist').readlines()[3:]:
-     words=line.split()
-     if words[0]=='python.exe' and int(words[1])!=currentPid:
-            os.kill(int(words[1]),signal.SIGTERM)
-            count+=1
+import psutil
+import sys
+
+ppid = -1 if len(sys.argv)<2 else int(sys.argv[1])
+count = 0
+if ppid != -1:
+            pprocess = psutil.Process(ppid)
+            children=pprocess.children(recursive=True)
+            for p in children: p.kill()
+            count=len(children)
 print('killed ',count,'processes')
